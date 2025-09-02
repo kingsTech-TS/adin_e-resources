@@ -233,7 +233,7 @@ const databases = [
             "Digital library of over 60,000 free eBooks, primarily consisting of classic literature, historical texts, and philosophy.",
         features: ["Free eBooks", "Classic literature", "Downloadable formats", "Public domain works"],
         subjects: ["Literature", "History", "Philosophy", "Religion", "Classic Texts"],
-        logo: "project.png",
+        logo: "Project.png",
         url: "https://www.gutenberg.org",
         color: "from-purple-700 to-orange-700",
         stats: { books: "60,000+", languages: "60+", formats: "Kindle, Plain Text" }
