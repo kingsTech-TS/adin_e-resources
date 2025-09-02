@@ -47,7 +47,7 @@ export default function ScrollToTop() {
             <Button
               onClick={scrollToTop}
             
-              className="w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 cursor-pointer text-white shadow-lg hover:shadow-xl transition-all duration-300 p-0"
+              className="w-14 h-14 rounded-full bg-gradient-to-r from-[#D7B56D] to-[#0B622F]  hover:to-[#2B2A29] cursor-pointer text-white shadow-lg hover:shadow-xl transition-all duration-300 p-0"
             >
               <motion.div
                 animate={{ y: [0, -2, 0] }}

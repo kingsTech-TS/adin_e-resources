@@ -396,242 +396,233 @@ export default function EResourcesPage() {
     })
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-100 to-indigo-100">
-            {/* Progress Bar */}
-            <motion.div
-                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 origin-left z-50"
-                style={{ scaleX }}
+  <div className="min-h-screen bg-gradient-to-br from-[#D7B56D]/10 via-[#0B622F]/5 to-[#2B2A29]/10">
+    {/* Progress Bar */}
+    <motion.div
+      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D7B56D] via-[#0B622F] to-[#2B2A29] origin-left z-50"
+      style={{ scaleX }}
+    />
+
+    {/* Header */}
+    <motion.header
+      className="bg-[#2B2A29]/90 backdrop-blur-md border-b border-[#0B622F]/50 sticky top-0 z-40 shadow-md"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+        <Link href="/" className="flex items-center space-x-2">
+          <motion.div
+            className="flex items-center cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <img
+              src="/logo/Adin.png"
+              alt="Logo"
+              className="h-12 object-contain drop-shadow-lg"
             />
+          </motion.div>
+        </Link>
 
-            {/* Header */}
-            <motion.header
-                className="bg-indigo-950/80 backdrop-blur-md border-b border-indigo-900 sticky top-0 z-40 shadow-md"
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5 }}
+        <a
+          href="https://e-library.adin-u.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button className="text-xs sm:text-sm italic tracking-wide
+            bg-[#0B622F] text-white px-3 sm:px-4 py-2 rounded-lg 
+            shadow-sm hover:bg-[#2B2A29] transition-colors w-fit">
+            Back to <span className="font-medium">Home</span>
+          </Button>
+        </a>
+      </div>
+    </motion.header>
+
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Hero Section */}
+      <motion.div
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.div
+          className="inline-flex items-center px-4 py-2 bg-[#D7B56D]/20 text-[#2B2A29] rounded-full text-sm font-medium mb-6"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <Database className="w-4 h-4 mr-2 text-[#0B622F]" />
+          Digital Resources Portal
+        </motion.div>
+
+        <h1 className="text-5xl md:text-7xl font-bold text-[#2B2A29] mb-6 tracking-tight">
+          Electronic{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D7B56D] via-[#0B622F] to-[#2B2A29]">
+            Resources
+          </span>
+        </h1>
+
+        <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+          Access over 10 million electronic volumes through our comprehensive collection of academic databases,
+          journals, and digital libraries supporting research across all disciplines
+        </p>
+
+        {/* Stats */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[#0B622F]">10M+</div>
+            <div className="text-sm text-gray-600">Electronic Volumes</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[#D7B56D]">15,000+</div>
+            <div className="text-sm text-gray-600">Academic Journals</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[#2B2A29]">500+</div>
+            <div className="text-sm text-gray-600">Databases</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[#0B622F]">24/7</div>
+            <div className="text-sm text-gray-600">Access Available</div>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Search and Filter Section */}
+      <motion.div
+        className="bg-white rounded-2xl p-8 shadow-lg border border-[#D7B56D]/30 mb-12"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
+        <div className="flex flex-col lg:flex-row gap-6 items-center">
+          {/* Search */}
+          <div className="flex-1 relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+            <Input
+              type="text"
+              placeholder="Search databases, subjects, or keywords..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10 h-12 text-lg border-gray-200 focus:border-[#0B622F] focus:ring-[#0B622F]"
+            />
+          </div>
+
+          {/* Category Filter */}
+          <div className="flex items-center gap-2">
+            <Filter className="h-5 w-5 text-gray-400" />
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="h-12 px-4 border border-gray-200 rounded-lg focus:border-[#D7B56D] focus:ring-[#D7B56D] bg-white"
             >
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-                    <Link href="/" className="flex items-center space-x-2">
-                        <motion.div
-                            className="flex items-center cursor-pointer"
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        >
-                            <div className="flex items-center space-x-1">
-                                <img
-                                    src="/logo/Adin.png"
-                                    alt="Logo 1"
-                                    className="h-12 object-contain drop-shadow-lg"
-                                />
-                            </div>
-                        </motion.div>
-                    </Link>
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-                    <a
-                        href="https://e-library.adin-u.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Button
-                            className="text-xs sm:text-sm italic tracking-wide
-      bg-gray-500 text-white px-3 sm:px-4 py-2 rounded-lg 
-      shadow-sm hover:bg-primary transition-colors w-fit"
-                        >
-                            Back to <span className="font-medium">Home</span>
-                        </Button>
-                    </a>
+        {/* Quick Stats */}
+        <div className="mt-6 pt-6 border-t border-gray-100">
+          <p className="text-gray-600 text-center">
+            Showing <span className="font-semibold text-[#0B622F]">{filteredDatabases.length}</span> databases
+            {selectedCategory !== "All" && (
+              <span>
+                {" "}in <span className="font-semibold">{selectedCategory}</span>
+              </span>
+            )}
+            {searchTerm && (
+              <span>
+                {" "}matching "<span className="font-semibold text-[#2B2A29]">{searchTerm}</span>"
+              </span>
+            )}
+          </p>
+        </div>
+      </motion.div>
 
+      {/* Databases Grid */}
+      <motion.div
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+      >
+        {filteredDatabases.map((database, index) => (
+          <DatabaseCard key={database.id} database={database} index={index} />
+        ))}
+      </motion.div>
 
-                </div>
-            </motion.header>
+      {/* No Results */}
+      {filteredDatabases.length === 0 && (
+        <motion.div
+          className="text-center py-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Database className="h-16 w-16 text-gray-300 mx-auto mb-4" />
+          <h3 className="text-2xl font-bold text-[#2B2A29] mb-2">No databases found</h3>
+          <p className="text-gray-600 mb-6">Try adjusting your search terms or category filter</p>
+          <Button
+            onClick={() => {
+              setSearchTerm("")
+              setSelectedCategory("All")
+            }}
+            className="bg-[#0B622F] hover:bg-[#2B2A29] text-white"
+          >
+            Clear Filters
+          </Button>
+        </motion.div>
+      )}
 
-
-
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                {/* Hero Section */}
-                <motion.div
-                    className="text-center mb-16"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <motion.div
-                        className="inline-flex items-center px-4 py-2 bg-purple-200 text-purple-600 rounded-full text-sm font-medium mb-6"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        <Database className="w-4 h-4 mr-2" />
-                        Digital Resources Portal
-                    </motion.div>
-
-                    <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
-                        Electronic{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500">
-                            Resources
-                        </span>
-                    </h1>
-
-                    <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        Access over 10 million electronic volumes through our comprehensive collection of academic databases,
-                        journals, and digital libraries supporting research across all disciplines
-                    </p>
-
-                    {/* Stats */}
-                    <motion.div
-                        className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12 max-w-4xl mx-auto"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                    >
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-indigo-600">10M+</div>
-                            <div className="text-sm text-gray-600">Electronic Volumes</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-purple-600">15,000+</div>
-                            <div className="text-sm text-gray-600">Academic Journals</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-teal-600">500+</div>
-                            <div className="text-sm text-gray-600">Databases</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl font-bold text-pink-600">24/7</div>
-                            <div className="text-sm text-gray-600">Access Available</div>
-                        </div>
-                    </motion.div>
-                </motion.div>
-
-                {/* Search and Filter Section */}
-                <motion.div
-                    className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-12"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                >
-                    <div className="flex flex-col lg:flex-row gap-6 items-center">
-                        {/* Search */}
-                        <div className="flex-1 relative">
-                            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                            <Input
-                                type="text"
-                                placeholder="Search databases, subjects, or keywords..."
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                className="pl-10 h-12 text-lg border-gray-200 focus:border-green-500 focus:ring-green-500"
-                            />
-                        </div>
-
-                        {/* Category Filter */}
-                        <div className="flex items-center gap-2">
-                            <Filter className="h-5 w-5 text-gray-400" />
-                            <select
-                                value={selectedCategory}
-                                onChange={(e) => setSelectedCategory(e.target.value)}
-                                className="h-12 px-4 border border-gray-200 rounded-lg focus:border-green-500 focus:ring-green-500 bg-white"
-                            >
-                                {categories.map((category) => (
-                                    <option key={category} value={category}>
-                                        {category}
-                                    </option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
-
-                    {/* Quick Stats */}
-                    <div className="mt-6 pt-6 border-t border-gray-100">
-                        <p className="text-gray-600 text-center">
-                            Showing <span className="font-semibold text-green-600">{filteredDatabases.length}</span> databases
-                            {selectedCategory !== "All" && (
-                                <span>
-                                    {" "}
-                                    in <span className="font-semibold">{selectedCategory}</span>
-                                </span>
-                            )}
-                            {searchTerm && (
-                                <span>
-                                    {" "}
-                                    matching "<span className="font-semibold">{searchTerm}</span>"
-                                </span>
-                            )}
-                        </p>
-                    </div>
-                </motion.div>
-
-                {/* Databases Grid */}
-                <motion.div
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                >
-                    {filteredDatabases.map((database, index) => (
-                        <DatabaseCard key={database.id} database={database} index={index} />
-                    ))}
-                </motion.div>
-
-                {/* No Results */}
-                {filteredDatabases.length === 0 && (
-                    <motion.div
-                        className="text-center py-16"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <Database className="h-16 w-16 text-gray-300 mx-auto mb-4" />
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">No databases found</h3>
-                        <p className="text-gray-600 mb-6">Try adjusting your search terms or category filter</p>
-                        <Button
-                            onClick={() => {
-                                setSearchTerm("")
-                                setSelectedCategory("All")
-                            }}
-                            className="bg-green-600 hover:bg-green-700"
-                        >
-                            Clear Filters
-                        </Button>
-                    </motion.div>
-                )}
-
-                {/* Access Information */}
-                <motion.div
-                    className="mt-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 rounded-2xl p-8 text-white"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <div className="max-w-4xl mx-auto text-center">
-                        <Globe className="h-16 w-16 mx-auto mb-6 opacity-90" />
-                        <h2 className="text-3xl font-bold mb-4">Access Information</h2>
-                        <p className="text-xl mb-6 opacity-90">
-                            Most databases require University of Ibadan network access. Some resources like JSTOR allow off-campus
-                            access with institutional login.
-                        </p>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                            <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-                                <Users className="h-8 w-8 mx-auto mb-3" />
-                                <h3 className="font-semibold mb-2">On-Campus Access</h3>
-                                <p className="text-sm opacity-90">Direct access through UI network</p>
-                            </div>
-                            <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-                                <Zap className="h-8 w-8 mx-auto mb-3" />
-                                <h3 className="font-semibold mb-2">Off-Campus Access</h3>
-                                <p className="text-sm opacity-90">VPN or institutional login required</p>
-                            </div>
-                            <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-                                <Award className="h-8 w-8 mx-auto mb-3" />
-                                <h3 className="font-semibold mb-2">Support Available</h3>
-                                <p className="text-sm opacity-90">Contact ICT & Systems Division</p>
-                            </div>
-                        </div>
-                    </div>
-                </motion.div>
+      {/* Access Information */}
+      <motion.div
+        className="mt-20 bg-gradient-to-r from-[#D7B56D] via-[#0B622F] to-[#2B2A29] rounded-2xl p-8 text-white"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <Globe className="h-16 w-16 mx-auto mb-6 opacity-90" />
+          <h2 className="text-3xl font-bold mb-4">Access Information</h2>
+          <p className="text-xl mb-6 opacity-90">
+            Most databases require Adin Open Library network access. Some resources like JSTOR allow off-campus
+            access with institutional login.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
+              <Users className="h-8 w-8 mx-auto mb-3" />
+              <h3 className="font-semibold mb-2">On-Campus Access</h3>
+              <p className="text-sm opacity-90">Direct access through UI network</p>
             </div>
-        </div >
-    )
+            <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
+              <Zap className="h-8 w-8 mx-auto mb-3" />
+              <h3 className="font-semibold mb-2">Off-Campus Access</h3>
+              <p className="text-sm opacity-90">VPN or institutional login required</p>
+            </div>
+            <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
+              <Award className="h-8 w-8 mx-auto mb-3" />
+              <h3 className="font-semibold mb-2">Support Available</h3>
+              <p className="text-sm opacity-90">Contact ICT & Systems Division</p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+)
+
 }
 
 function DatabaseCard({ database, index }: { database: any; index: number }) {
@@ -645,18 +636,22 @@ function DatabaseCard({ database, index }: { database: any; index: number }) {
             whileHover={{ y: -10, scale: 1.02 }}
         >
             {/* Header with Logo and Category */}
-            <div className={`bg-gradient-to-r ${database.color} p-6 text-white relative overflow-hidden`}>
+            <div className="bg-gradient-to-r from-[#0B622F] to-[#2B2A29] p-6 text-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/10"></div>
                 <div className="relative z-10">
                     <div className="flex items-start justify-between mb-4">
                         <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3">
-                            <img src={database.logo || "/placeholder.svg"} alt={`${database.name} logo`} className="h-12 w-auto" />
+                            <img
+                                src={database.logo || "/placeholder.svg"}
+                                alt={`${database.name} logo`}
+                                className="h-12 w-auto"
+                            />
                         </div>
-                        <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
+                        <span className="bg-[#D7B56D]/80 text-[#2B2A29] px-3 py-1 rounded-full text-sm font-medium">
                             {database.category}
                         </span>
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">{database.name}</h3>
+                    <h3 className="text-2xl font-bold mb-2 text-[#D7B56D]">{database.name}</h3>
                     <p className="text-white/90 leading-relaxed">{database.description}</p>
                 </div>
 
@@ -671,7 +666,9 @@ function DatabaseCard({ database, index }: { database: any; index: number }) {
                 <div className="grid grid-cols-3 gap-4 mb-6">
                     {Object.entries(database.stats).map(([key, value]) => (
                         <div key={key} className="text-center">
-                            <div className="text-2xl font-bold text-gray-900">{value as string}</div>
+                            <div className="text-2xl font-bold text-[#0B622F]">
+                                {value as string}
+                            </div>
                             <div className="text-xs text-gray-500 capitalize">{key}</div>
                         </div>
                     ))}
@@ -679,21 +676,21 @@ function DatabaseCard({ database, index }: { database: any; index: number }) {
 
                 {/* Features */}
                 <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                        <Zap className="h-4 w-4 mr-2 text-green-600" />
+                    <h4 className="font-semibold text-[#2B2A29] mb-3 flex items-center">
+                        <Zap className="h-4 w-4 mr-2 text-[#0B622F]" />
                         Key Features
                     </h4>
                     <div className="grid grid-cols-2 gap-2">
                         {database.features.map((feature: string, i: number) => (
                             <motion.div
                                 key={i}
-                                className="flex items-center text-sm text-gray-600"
+                                className="flex items-center text-sm text-gray-700"
                                 initial={{ opacity: 0, x: -10 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5, delay: i * 0.1 }}
                                 viewport={{ once: true }}
                             >
-                                <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
+                                <div className="w-1.5 h-1.5 bg-[#D7B56D] rounded-full mr-2"></div>
                                 {feature}
                             </motion.div>
                         ))}
@@ -702,15 +699,15 @@ function DatabaseCard({ database, index }: { database: any; index: number }) {
 
                 {/* Subjects */}
                 <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                        <BookOpen className="h-4 w-4 mr-2 text-orange-600" />
+                    <h4 className="font-semibold text-[#2B2A29] mb-3 flex items-center">
+                        <BookOpen className="h-4 w-4 mr-2 text-[#D7B56D]" />
                         Subject Areas
                     </h4>
                     <div className="flex flex-wrap gap-2">
                         {database.subjects.map((subject: string, i: number) => (
                             <motion.span
                                 key={i}
-                                className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-200"
+                                className="px-3 py-1 bg-[#0B622F]/10 text-[#0B622F] rounded-full text-sm font-medium hover:bg-[#0B622F]/20 transition-colors duration-200"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.5, delay: i * 0.05 }}
@@ -728,27 +725,28 @@ function DatabaseCard({ database, index }: { database: any; index: number }) {
                     href={database.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block"
+                    className="block mb-10" // Added margin for logo spacing
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                 >
-                    <Button className={`w-full bg-gradient-to-r ${database.color} hover:opacity-90 cursor-pointer text-white shadow-lg group`}>
+                    <Button className="w-full bg-gradient-to-r from-[#D7B56D] to-[#0B622F] hover:opacity-90 cursor-pointer text-white shadow-lg group">
                         <span>Access Database</span>
                         <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
                 </motion.a>
-
-                {/* Small logo inside flow */}
-                <div className="flex justify-end mt-10">
-                    <img
-                        src="/logo/Adin.png"
-                        alt="Adin logo"
-                        className="w-20 h-8 opacity-70"
-                    />
-                </div>
             </div>
 
+            {/* Hover Effect Border */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#D7B56D] transition-colors duration-300 pointer-events-none"></div>
+
+            {/* Small logo at bottom right */}
+            <img
+                src="/logo/Adin.png"
+                alt="Adin logo"
+                className="absolute bottom-3 right-3 w-20 h-8 opacity-70"
+            />
         </motion.div>
     )
 }
+
 
