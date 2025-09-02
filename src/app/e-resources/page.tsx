@@ -90,7 +90,7 @@ const databases = [
         subjects: ["Physics", "Mathematics", "Computer Science", "Quantitative Biology", "Quantitative Finance", "Statistics", "Electrical Engineering"],
         logo: "arX.png",
         url: "https://arxiv.org",
-         color: "from-pink-500 to-indigo-600",
+        color: "from-pink-500 to-indigo-600",
         stats: { articles: "2.3M+", categories: "8+", subPerMonth: "15,000+" },
     },
 
@@ -427,16 +427,20 @@ export default function EResourcesPage() {
                         </motion.div>
                     </Link>
 
-                    {/* Subtitle: hidden on small, visible on md+ */}
-                    <Link href="/" passHref>
+                    <a
+                        href="https://e-library.adin-u.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <Button
-                            className="hidden md:block text-sm italic tracking-wide 
-               bg-gray-500 text-white px-4 py-2 rounded-lg 
-               shadow-sm hover:bg-primary transition-colors"
+                            className="text-xs sm:text-sm italic tracking-wide
+      bg-gray-500 text-white px-3 sm:px-4 py-2 rounded-lg 
+      shadow-sm hover:bg-primary transition-colors w-fit"
                         >
                             Back to <span className="font-medium">Home</span>
                         </Button>
-                    </Link>
+                    </a>
+
 
                 </div>
             </motion.header>
@@ -452,7 +456,7 @@ export default function EResourcesPage() {
                     transition={{ duration: 0.8 }}
                 >
                     <motion.div
-                        className="inline-flex items-center px-4 py-2 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-6"
+                        className="inline-flex items-center px-4 py-2 bg-purple-200 text-purple-600 rounded-full text-sm font-medium mb-6"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -633,7 +637,7 @@ export default function EResourcesPage() {
 function DatabaseCard({ database, index }: { database: any; index: number }) {
     return (
         <motion.div
-            className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500"
+            className="relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -733,12 +737,18 @@ function DatabaseCard({ database, index }: { database: any; index: number }) {
                         <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
                 </motion.a>
+
+                {/* Small logo inside flow */}
+                <div className="flex justify-end mt-10">
+                    <img
+                        src="/logo/Adin.png"
+                        alt="Adin logo"
+                        className="w-20 h-8 opacity-70"
+                    />
+                </div>
             </div>
 
-            {/* Hover Effect Border */}
-            <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-green-200 transition-colors duration-300 pointer-events-none"></div>
         </motion.div>
-
-
     )
 }
+
