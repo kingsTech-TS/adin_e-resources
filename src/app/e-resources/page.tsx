@@ -18,8 +18,8 @@ const databases = [
         features: ["Full-text articles", "Historical archives", "Primary sources", "Citation tools"],
         subjects: ["Arts & Humanities", "Social Sciences", "Science & Mathematics", "Business & Economics"],
         logo: "JSTOR.png",
-        url: "/restricted",
-        color: "from-red-500 to-red-600",
+        url: "https://www.jstor.org/",
+        color: "from-purple-500 to-indigo-600",
         stats: { articles: "12M+", journals: "3,000+", books: "75,000+" },
     },
 
@@ -43,7 +43,7 @@ const databases = [
         ],
         logo: "sci_gov.png",
         url: "https://www.science.gov",
-        color: "from-green-500 to-green-600",
+        color: "from-pink-500 to-indigo-600",
         stats: {
             databases: "60+",
             pages: "200M+",
@@ -76,7 +76,7 @@ const databases = [
         subjects: ["History", "Literature", "Law", "Arts", "Education", "Religion", "Social Sciences"],
         logo: "hatii.png",
         url: "https://www.hathitrust.org/",
-        color: "from-yellow-600 to-orange-700",
+        color: "from-purple-500 to-purple-700",
         stats: { books: "18M+", publicDomain: "7.5M+", partners: "80+" },
     },
 
@@ -90,7 +90,7 @@ const databases = [
         subjects: ["Physics", "Mathematics", "Computer Science", "Quantitative Biology", "Quantitative Finance", "Statistics", "Electrical Engineering"],
         logo: "arX.png",
         url: "https://arxiv.org",
-        color: "from-gray-700 to-gray-900",
+         color: "from-pink-500 to-indigo-600",
         stats: { articles: "2.3M+", categories: "8+", subPerMonth: "15,000+" },
     },
 
@@ -104,7 +104,7 @@ const databases = [
         subjects: ["Demographics", "Economics", "Health", "Education", "Environment", "Development"],
         logo: "UNdata.png",
         url: "https://data.un.org",
-        color: "from-blue-800 to-blue-900",
+        color: "from-indigo-700 to-blue-900",
         stats: { datasets: "60+", countries: "200+", indicators: "1,000+" },
     },
     // {
@@ -131,7 +131,7 @@ const databases = [
         subjects: ["Social Sciences", "Economics", "Law", "Business", "Political Science", "Humanities", "Health Sciences"],
         logo: "SSR.png",
         url: "https://www.ssrn.com/index.cfm/en/",
-        color: "from-gray-600 to-gray-800",
+        color: "from-pink-600 to-pink-800",
         stats: { papers: "1M+", authors: "600K+", downloads: "150M+" },
     },
     {
@@ -144,7 +144,7 @@ const databases = [
         subjects: ["Arts", "Humanities", "Sciences", "Engineering", "Social Sciences"],
         logo: "OCLC.png",
         url: "https://www.oclc.org/en/oaister.html",
-        color: "from-blue-600 to-blue-800",
+        color: "from-indigo-600 to-indigo-800",
         stats: { records: "50M+", institutions: "1,500+", countries: "100+" },
     },
     {
@@ -157,7 +157,7 @@ const databases = [
         subjects: ["Life Sciences", "Biomedical Sciences", "Medicine"],
         logo: "PMC.png",
         url: "https://europepmc.org",
-        color: "from-green-500 to-green-700",
+        color: "from-pink-500 to-indigo-600",
         stats: { articles: "42M+", grants: "800k+", preprints: "500k+" },
     },
     {
@@ -170,7 +170,7 @@ const databases = [
         subjects: ["Economics", "Business Studies", "Management", "Marketing", "Finance"],
         logo: "Econ.png",
         url: "https://www.econbiz.de",
-        color: "from-yellow-500 to-orange-600",
+        color: "from-purple-700 to-blue-900",
         stats: { records: "1.1M+", institutions: "200+", countries: "50+" }
     },
     {
@@ -183,7 +183,7 @@ const databases = [
         subjects: ["Geography", "Demographics", "Economy", "Military", "Government", "Infrastructure"],
         logo: "fact.png",
         url: "https://www.cia.gov/the-world-factbook",
-        color: "from-gray-700 to-blue-900",
+        color: "from-pink-700 to-blue-900",
         stats: { countries: "260+", variables: "100+", updates: "Weekly" }
     },
     {
@@ -235,7 +235,7 @@ const databases = [
         subjects: ["Literature", "History", "Philosophy", "Religion", "Classic Texts"],
         logo: "project.png",
         url: "https://www.gutenberg.org",
-        color: "from-yellow-700 to-orange-700",
+        color: "from-purple-700 to-orange-700",
         stats: { books: "60,000+", languages: "60+", formats: "Kindle, Plain Text" }
     },
     {
@@ -248,7 +248,7 @@ const databases = [
         subjects: ["History", "Journalism", "American Studies", "Social Issues"],
         logo: "Chronic.png",
         url: "https://chroniclingamerica.loc.gov",
-        color: "from-blue-900 to-indigo-800",
+        color: "from-blue-600 to-indigo-900",
         stats: { newspapers: "20M+ pages", years: "1789–1963", states: "40+" }
     },
     {
@@ -261,7 +261,7 @@ const databases = [
         subjects: ["Biology", "Genetics", "Neuroscience", "Ecology", "Bioinformatics"],
         logo: "Bio.png",
         url: "https://www.biorxiv.org",
-        color: "from-green-600 to-green-800",
+        color: "from-pink-700 to-purple-900",
         stats: { preprints: "100,000+", subjects: "30+", downloads: "10M+" }
     },
     {
@@ -274,7 +274,7 @@ const databases = [
         subjects: ["Medicine", "Genetics", "Neuroscience", "Ecology", "Bioinformatics"],
         logo: "medR.png",
         url: "https://www.medrxiv.org",
-        color: "from-red-600 to-red-800",
+        color: "from-red-500 to-pink-800",
         stats: { preprints: "40,000+", categories: "20+", updates: "Daily" }
     },
     {
@@ -339,7 +339,7 @@ const databases = [
         subjects: ["Humanities", "Social Sciences", "Science", "Technology", "Medicine"],
         logo: "doab.png",
         url: "http://www.doabooks.org",
-        color: "from-orange-500 to-orange-600",
+        color: "from-pink-500 to-pink-900",
         stats: { books: "60,000+", publishers: "600+", subjects: "30+" }
     },
     {
@@ -352,7 +352,7 @@ const databases = [
         subjects: ["Science", "Technology", "Medicine", "Social Sciences", "Humanities"],
         logo: "DOAJ.png",
         url: "http://www.doaj.org",
-        color: "from-teal-500 to-teal-600",
+        color: "from-purple-600 to-pink-900",
         stats: { journals: "20,000+", countries: "130+", disciplines: "15+" }
     }
 
@@ -396,16 +396,16 @@ export default function EResourcesPage() {
     })
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-green-50">
+        <div className="min-h-screen bg-gradient-to-br from-purple-100 to-indigo-100">
             {/* Progress Bar */}
             <motion.div
-                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-600 to-orange-600 origin-left z-50"
+                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 origin-left z-50"
                 style={{ scaleX }}
             />
 
             {/* Header */}
             <motion.header
-                className="bg-gray-900/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-40 shadow-md"
+                className="bg-indigo-950/80 backdrop-blur-md border-b border-indigo-900 sticky top-0 z-40 shadow-md"
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -430,9 +430,11 @@ export default function EResourcesPage() {
                     {/* Subtitle: hidden on small, visible on md+ */}
                     <Link href="/" passHref>
                         <Button
-                            className="hidden md:block text-sm text-gray-300 italic tracking-wide hover:text-primary transition-colors"
+                            className="hidden md:block text-sm italic tracking-wide 
+               bg-gray-500 text-white px-4 py-2 rounded-lg 
+               shadow-sm hover:bg-primary transition-colors"
                         >
-                           Back to <span className="text-primary font-medium">Home</span>
+                            Back to <span className="font-medium">Home</span>
                         </Button>
                     </Link>
 
@@ -461,10 +463,11 @@ export default function EResourcesPage() {
 
                     <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
                         Electronic{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-orange-600">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500">
                             Resources
                         </span>
                     </h1>
+
                     <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                         Access over 10 million electronic volumes through our comprehensive collection of academic databases,
                         journals, and digital libraries supporting research across all disciplines
@@ -478,19 +481,19 @@ export default function EResourcesPage() {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-green-600">10M+</div>
+                            <div className="text-3xl font-bold text-indigo-600">10M+</div>
                             <div className="text-sm text-gray-600">Electronic Volumes</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-orange-600">15,000+</div>
+                            <div className="text-3xl font-bold text-purple-600">15,000+</div>
                             <div className="text-sm text-gray-600">Academic Journals</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-blue-600">500+</div>
+                            <div className="text-3xl font-bold text-teal-600">500+</div>
                             <div className="text-sm text-gray-600">Databases</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-purple-600">24/7</div>
+                            <div className="text-3xl font-bold text-pink-600">24/7</div>
                             <div className="text-sm text-gray-600">Access Available</div>
                         </div>
                     </motion.div>
@@ -590,7 +593,7 @@ export default function EResourcesPage() {
 
                 {/* Access Information */}
                 <motion.div
-                    className="mt-20 bg-gradient-to-r from-green-600 to-orange-600 rounded-2xl p-8 text-white"
+                    className="mt-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 rounded-2xl p-8 text-white"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
@@ -623,7 +626,7 @@ export default function EResourcesPage() {
                     </div>
                 </motion.div>
             </div>
-        </div>
+        </div >
     )
 }
 

@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-indigo-950/80 text-white">
         {/* Bottom Bar */}
         <motion.div
           className="border-t border-gray-800 mt-5 pt-8 text-center"
@@ -15,7 +15,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-400">© {currentYear} Kenneth Dike Library E-resources. University of Ibadan. All rights reserved.</p>
+          <p className="text-gray-400">© {currentYear} Adin Open Library E-resources. All rights reserved.</p>
         </motion.div>
     
    </footer>
